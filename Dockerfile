@@ -6,6 +6,8 @@ WORKDIR /app
 ENV TZ=Asia/Kolkata
 ENV DEBIAN_FRONTEND=noninteractive
 
+COPY . .
+
 RUN apt -qq update
 RUN apt -qq install -y  git wget curl \
              python3 busybox unzip unrar tar \
@@ -16,8 +18,5 @@ RUN apt -qq install -y  git wget curl \
 RUN python3 -m pip install --upgrade pip
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-
-
-COPY . .
 
 CMD ["python3", "main.py"]
