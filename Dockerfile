@@ -2,7 +2,6 @@ FROM ubuntu:20.04
 
 WORKDIR /app
 
-
 ENV TZ=Asia/Kolkata
 ENV DEBIAN_FRONTEND=noninteractive
 
